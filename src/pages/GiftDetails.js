@@ -1,9 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-export default Header = () => {
+const GiftDetailsPage = () => {
+
+    const params = useParams();
+
+
     return (
-        <header>
-            <h1>Gifts</h1>
-        </header>
+        <h2>This page will list the details of the {params.id} gift.</h2>
     )
 }
+export default GiftDetailsPage;

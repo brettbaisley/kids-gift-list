@@ -4,6 +4,8 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WelcomePage from './pages/Welcome';
+import GiftsListPage from './pages/GiftsList';
+import GiftDetailsPage from './pages/GiftDetails';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Header></Header>
           <Switch>
             <Route exact path="/" component={WelcomePage} />
+            <Route exact path="/gifts/:id" component={GiftDetailsPage} />
+            <Route exact path="/gifts" component={GiftsListPage} />
           </Switch>
         <Footer></Footer>
       </BrowserRouter>

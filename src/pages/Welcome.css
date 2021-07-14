@@ -2,17 +2,13 @@
     background-image: url('../images/masthead-boys.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: left;
+    background-position-x: 30%;
     background-position-y: center;
     min-height: 30em;
 }
 
 .welcome-text {
     padding: 1em;
-}
-
-.welcome-text h2 {
-    margin-top:0;
 }
 
 
