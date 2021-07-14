@@ -1,5 +1,8 @@
 import './App.css';
+import './firebase/config';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { UserProvider } from './firebase/UserProvider';
+
 // My Pages
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,7 +14,7 @@ import SignUpPage from './pages/Signup';
 
 function App() {
   return (
-    <>
+    <UserProvider>
       <BrowserRouter>
         <Header></Header>
           <Switch>
@@ -23,7 +26,7 @@ function App() {
           </Switch>
         <Footer></Footer>
       </BrowserRouter>
-    </>
+    </UserProvider>
   )
 }
 

@@ -47,9 +47,9 @@ const SignupPage = (props) => {
                 </input> 
 
 
-                <button type="submit">Register</button>
+                <button type="submit" className="btn btn-primary">Register</button>
 
-                <p>Already registered? <Link to="/login" >Login</Link></p>
+                <p>Already registered? <Link to="/login" className='btn btn-secondary'>Login</Link></p>
                      
             </form>
         </div>

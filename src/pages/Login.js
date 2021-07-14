@@ -1,12 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { login } from '../firebase/auth';
 
 const LoginPage = (props) => {
     const { register, handleSubmit, reset} = useForm();
     
-    const onSubmit = () => {
-        console.log("Form submitted");
+    const onSubmit = async (data) => {
+        let user;
+        console.log("form submitted");
+        try {
+            user = await login(data);
+            reset();
+        } catch (error) {
+            console.log(error);
+        }
+
+        if (user) {
+            props.history.push(`/gifts`);
+        }
     }
 
     return (
@@ -30,9 +42,9 @@ const LoginPage = (props) => {
                 {...register("password")}>
             </input>
 
-            <button type="submit">Sign In</button>
+            <button type="submit" className="btn btn-primary">Sign In</button>
             
-            <p>No Account? <Link to="/signup" >Sign Up</Link></p>
+            <p>No Account? <Link to="/signup" className='btn btn-secondary'>Sign Up</Link></p>
             </form>
         </div>
     )
