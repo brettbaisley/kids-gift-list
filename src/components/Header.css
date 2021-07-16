@@ -11,3 +11,9 @@
 .site-header h1 {
     margin: 0;
 }
+
+.site-header h1 a {
+    color: #acacac;
+    font-size: 2rem;
+    text-decoration: none;
+}

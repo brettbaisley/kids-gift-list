@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="site-footer">
             <p>
-                &copy; {(new Date().getFullYear())} ~ Brett Baisley
+                &copy; {(new Date().getFullYear())} &#183; Brett Baisley &#183; Made with &#x2661; in New York
             </p>
         </footer>
     )

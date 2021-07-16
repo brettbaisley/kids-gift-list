@@ -7,12 +7,56 @@
   --text-secondary-color: #717171;
 }
 
+body, header {
+  overflow-x: hidden;
+}
+
 
 input, button {
   height: 2.5em;
   padding: 0 1em;
   margin-bottom: 1em;
 }
+
+textarea {
+  padding: 0 1em;
+  margin-bottom: 1em;
+}
+
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th {
+  border: 1px solid black;
+}
+td {
+  border: 1px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+button {
+  margin: 0;
+  height: 2rem;
+}
+
+.site-nav {
+  display: flex;
+}
+
+.site-nav > a {
+  color: rgb(255,255,255);
+  padding: 1em;
+  text-decoration: none;
+}
+
+.site-nav > a:hover {
+  color: rgb(230,230,230);
+}
+
 
 .btn {
   border: 0;
@@ -58,10 +102,6 @@ input, button {
   list-style: none;
 }
 
-.gift-card {
-  
-}
-
 .gift-card a {
   text-decoration: none;
 }
@@ -83,6 +123,7 @@ input, button {
 
 .gift-img {
   width: 100%;
+  max-height: 300px;
 }
 
 
@@ -146,5 +187,64 @@ input, button {
               "img title price"
               "img description description"
               "img action action";
+  }
+}
+
+
+
+
+
+/* Admin Pages */
+.admin-add {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.admin-add-form {
+  max-width: 40em;
+  margin: 0 auto;
+}
+.admin-add-form > * {
+  width: 100%;
+}
+
+.admin-add-form textarea {
+  height: 10em;
+}
+
+
+
+
+
+
+
+/* Admin Pages */
+.admin-gift-container {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.admin-gift-list {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.admin-gift-list:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+
+
+@media screen and (min-width: 650px) {
+  .admin-gift-list {
+    display: grid;
+    grid-template-columns: 2fr 4fr 6fr 1fr 2fr ;
+  }
+
+  .admin-gift-list > * {
+    padding: 1em;
+    margin: 0;
   }
 }

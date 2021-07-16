@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { firestore } from '../firebase/config';
 
 
@@ -26,6 +26,7 @@ const GiftDetailsPage = () => {
     return (
         <>
             <h2>Gift Details Page</h2>
+            <Link to="/gifts">&lt;&lt;Back</Link>
             <div className="gift-detail-card">
                 <p className="gift-brand gift-detail-brand">{gift.brand}</p>
                 <p className="gift-title gift-detail-title">{gift.title}</p>

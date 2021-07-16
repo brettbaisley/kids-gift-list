@@ -4,7 +4,7 @@
     background-size: cover;
     background-position-x: 30%;
     background-position-y: center;
-    min-height: 30em;
+    height: 90vh;
 }
 
 .welcome-text {

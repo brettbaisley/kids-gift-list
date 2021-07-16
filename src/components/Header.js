@@ -17,9 +17,15 @@ const Header = () => {
 
     return (
         <header className="site-header">
-            <h1>Gifts</h1>
-            { !!user  && <button className="btn btn-primary" onClick={logoutUser}>Logout</button>}
-            { !!!user && <Link to="/login" className="btn btn-primary">Login</Link>}
+            <h1><Link to="/">Gifts</Link></h1>
+            <nav className="site-nav">
+                <Link to="/gifts">Gifts</Link>
+                { !!user  && <Link to="/admin">Admin</Link>}
+            </nav>
+            <div>
+                { !!user  && <button className="btn btn-primary" onClick={logoutUser}>Logout</button>}
+                { !!!user && <Link to="/login" className="btn btn-primary">Login</Link>}
+            </div>
         </header>
     )
 }

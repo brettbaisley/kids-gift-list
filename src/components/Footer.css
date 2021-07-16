@@ -1,4 +1,13 @@
 .site-footer {
     background: #303030;
     color: #acacac;
+    display: flex;
+    min-height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-footer * {
+    margin: 0;
+    padding: 0;
 }

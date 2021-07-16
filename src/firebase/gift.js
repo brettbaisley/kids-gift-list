@@ -16,14 +16,12 @@ export const addGiftDocument = async (gift) => {
 
     // Write the gift data to Cloud Firestore
     const res = firestore.collection('gifts').add(giftDetails)
-    console.log('Added document with ID: ', res.id);
     return res;
 }
 
 
 export const updateGiftDocument = async (gift) => {
-    console.log("Update document with ID: ", gift.uid)
-    const docRef = firestore.doc(`/gifts/${gift.uid}`);
+    const docRef = firestore.doc(`/gifts/${gift.id}`);
     return docRef.set(gift, {merge: true});
 }
 
@@ -36,10 +34,6 @@ export const deleteGiftDocument = async (gift) => {
 export const getGifts = async () => {
     // Return all gifts
     console.log("Get ALL gifts")
-    const giftsRef = firebase.collection('gifts')
-    const observer = giftsRef.onSnapshot(querySnapshot => {
-        
-    })
 }
 
 export const getGift = async () => {
