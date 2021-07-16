@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { login } from '../firebase/auth';
 
 const LoginPage = (props) => {
     const { register, handleSubmit, reset} = useForm();
-    
+    const [isLoading, setLoading] = useState(false);
+
     const onSubmit = async (data) => {
         let user;
-        console.log("form submitted");
+        setLoading(true);
+        
         try {
             user = await login(data);
             reset();
@@ -18,13 +20,17 @@ const LoginPage = (props) => {
 
         if (user) {
             props.history.push(`/gifts`);
+        } else {
+            setLoading(false);
         }
     }
+
+    const formClassName = `${isLoading ? 'loading' : ''}`;
 
     return (
         <div className="signin-form">
             <h2>Sign In</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
 
             <label>Email</label>
             <input 

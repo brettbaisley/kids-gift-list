@@ -2,6 +2,9 @@
   --btn-bg-primary-color: #3498DB;
   --btn-bg-secondary-color: #A569BD;
   --btn-bg-cta-color: #F39C12;
+
+  --text-primary-color: #1b1b1b;
+  --text-secondary-color: #717171;
 }
 
 
@@ -19,7 +22,6 @@ input, button {
   cursor: pointer;
   display: inline-block;
   line-height: 2rem;
-  /* min-width: 4.5rem; */
   padding: 0 .75rem;
   text-decoration: none;
 }
@@ -39,4 +41,110 @@ input, button {
 .signin-form > form > * {
   display: block;
   width: 100%;
+}
+
+
+
+
+/* Gift Page */
+.gifts-grid {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 15px;
+  list-style: none;
+}
+
+.gift-card {
+  
+}
+
+.gift-card a {
+  text-decoration: none;
+}
+
+.gift-title {
+  color: var(--text-primary-color);
+  font-weight: 800;
+}
+
+.gift-brand {
+  color: var(--text-secondary-color);
+  font-weight: 400;
+}
+
+.gift-price {
+  color: var(--text-primary-color);
+  font-weight: 600;
+}
+
+.gift-img {
+  width: 100%;
+}
+
+
+
+@media screen and (min-width: 650px) {
+  .gifts-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+
+
+
+
+/* Gift Detail Page */
+.gift-detail-card {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  align-items: center;
+  column-gap: 15px;
+  row-gap: 15px;
+  grid-template-areas: 
+            "brand price"
+            "title price"
+            "img img"
+            "description description"
+            "action action";
+}
+
+.gift-detail-brand {
+  grid-area: brand;
+}
+
+.gift-detail-title {
+  grid-area: title;
+}
+
+.gift-detail-price {
+  grid-area: price;
+  margin: 0;
+}
+
+.gift-detail-description {
+  grid-area: description;
+}
+
+.gift-detail-img {
+  grid-area: img;
+}
+
+
+@media screen and (min-width: 650px) {
+  .gift-detail-card {
+    grid-template-columns: 5fr 4fr 1fr;
+    grid-template-areas: 
+              "img brand price"
+              "img title price"
+              "img description description"
+              "img action action";
+  }
 }
