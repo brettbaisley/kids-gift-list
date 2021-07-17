@@ -53,7 +53,7 @@ const AdminUpdatePage = (props) => {
         setUserMessage({});
         try {
             await updateGiftDocument({id: gift.id, ...data});
-            console.log('Updated document');
+            console.log('Updated document: ', gift.id);
             setUserMessage( {status: 'success', message: `${gift.title} was updated successfully` });
         } catch (error) {
             console.log("There was an error updating document: ", error);
