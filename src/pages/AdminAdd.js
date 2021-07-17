@@ -5,22 +5,40 @@ import { useForm } from 'react-hook-form';
 const AdminAddPage = (props) => {
     const { register, handleSubmit, reset} = useForm();
     const [isLoading, setLoading] = useState(false);
+    const [userMessage, setUserMessage] = useState({});
+
+    const ShowUserMessage = (props) => {
+        if (props.message.status === 'success') {
+            return (
+                <p className="success"> { props.message.message } </p>
+            )
+        }
+        if (props.message.status === 'error') {
+            return (
+                <p className="error"> { props.message.message } </p>
+            )
+        } else {
+            return null;
+        }
+    }
 
     const onSubmit = async (data) => {
         let newGift;
         setLoading(true);
+        setUserMessage({});
         try {
             newGift = await addGiftDocument(data);
         } catch (error) {
             console.log(error);
+            setUserMessage( {status: 'error', message: error.message });
+        } finally {
+            setLoading(false);
         }
         
         if (newGift) {
             reset();
-            console.log('Added document with ID: ', newGift.id);
-
-        } else {
-            setLoading(false);
+            console.log('Added document with ID: ', newGift.title);
+            setUserMessage( {status: 'success', message: `${newGift.title} was added successfully` });
         }
     }
 
@@ -29,6 +47,12 @@ const AdminAddPage = (props) => {
     return (
         <div className="admin-add">
             <h2>Add New Item</h2>
+
+            {
+                userMessage && <ShowUserMessage message={userMessage} />
+
+            }
+
             <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
 
                 <label>Brand</label>

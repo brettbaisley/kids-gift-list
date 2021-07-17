@@ -82,11 +82,26 @@ button {
   max-width: 30em;
   margin: 0 auto;
 }
+
 .signin-form > form > * {
   display: block;
   width: 100%;
 }
 
+
+.error {
+  border: 1px solid rgb(128,0,0);
+  background-color: rgba(128,0,0,.3);
+  color: rgb(128,0,0);
+  padding: 1em;
+}
+
+.success {
+  border: 1px solid rgb(0,100,0);
+  background-color: rgba(0,100,0,.3);
+  color: rgb(0,100,0);
+  padding: 1em;
+}
 
 
 
@@ -240,7 +255,7 @@ button {
 @media screen and (min-width: 650px) {
   .admin-gift-list {
     display: grid;
-    grid-template-columns: 2fr 4fr 6fr 1fr 2fr ;
+    grid-template-columns: 1fr 2fr 4fr 6fr 1fr 2fr ;
   }
 
   .admin-gift-list > * {

@@ -9,6 +9,22 @@ const AdminUpdatePage = (props) => {
     const { register, handleSubmit, setValue } = useForm();
     const [ gift, setGift ] = useState(null);
     const [isLoading, setLoading] = useState(false);
+    const [userMessage, setUserMessage] = useState({});
+
+    const ShowUserMessage = (props) => {
+        if (props.message.status === 'success') {
+            return (
+                <p className="success"> { props.message.message } </p>
+            )
+        }
+        if (props.message.status === 'error') {
+            return (
+                <p className="error"> { props.message.message } </p>
+            )
+        } else {
+            return null;
+        }
+    }
 
     useEffect( () => {
         const giftRef = firestore.collection('gifts').doc(params.id);
@@ -34,11 +50,14 @@ const AdminUpdatePage = (props) => {
 
     const onSubmit = async (data) => {
         setLoading(true);
+        setUserMessage({});
         try {
             await updateGiftDocument({id: gift.id, ...data});
             console.log('Updated document');
+            setUserMessage( {status: 'success', message: `${gift.title} was updated successfully` });
         } catch (error) {
             console.log("There was an error updating document: ", error);
+            setUserMessage( {status: 'error', message: error.message });
         } finally {
             setLoading(false);
         }
@@ -49,6 +68,12 @@ const AdminUpdatePage = (props) => {
     return (
         <div className="admin-add">
             <h2>Update Item</h2>
+
+            {
+                userMessage && <ShowUserMessage message={userMessage} />
+
+            }
+
             <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
 
                 <label>Brand</label>

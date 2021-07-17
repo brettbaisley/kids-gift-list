@@ -6,22 +6,32 @@ import { useForm } from 'react-hook-form';
 const SignupPage = (props) => {
     const { register, handleSubmit, reset} = useForm();
     const [isLoading, setLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState(null);
+
+    const ShowError = (props) => {
+        return (
+            <p className="error"> { props.message } </p>
+        )
+    }
 
     const onSubmit = async (data) => {
         let newUser;
         setLoading(true);
+        setErrorMsg(null);
+
         try {
             newUser = await signup(data);
             reset();
         } catch (error) {
             console.log(error);
+            setErrorMsg(error.message);
+        } finally {
+            setLoading(false);
         }
 
         if (newUser) {
             props.history.push(`/gifts`);
-        } else {
-            setLoading(false);
-        }
+        } 
     }
 
     const formClassName = `${isLoading ? 'loading' : ''}`;
@@ -29,6 +39,12 @@ const SignupPage = (props) => {
     return (
         <div className="signin-form">
             <h2>Sign Up</h2>
+
+            {
+                errorMsg && <ShowError message={errorMsg} />
+
+            }
+
             <form onSubmit={handleSubmit(onSubmit)}  className={formClassName}>
 
                 <label>Email</label>

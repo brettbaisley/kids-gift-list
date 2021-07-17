@@ -35,6 +35,7 @@ const AdminPage = () => {
                     {
                         giftList.map(gift => (
                             <div key={gift.id} className="admin-gift-list">
+                                <img src={gift.img_url} alt={gift.title} style={{width: '100px', height: 'auto'}} />
                                 <p>{gift.brand}</p>
                                 <p>{gift.title}</p>
                                 <p>{gift.description.substring(0,150)}...</p>

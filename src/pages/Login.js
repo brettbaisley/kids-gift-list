@@ -6,23 +6,32 @@ import { login } from '../firebase/auth';
 const LoginPage = (props) => {
     const { register, handleSubmit, reset} = useForm();
     const [isLoading, setLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState(null);
+
+    const ShowError = (props) => {
+        return (
+            <p className="error"> { props.message } </p>
+        )
+    }
 
     const onSubmit = async (data) => {
         let user;
         setLoading(true);
+        setErrorMsg(null);
         
         try {
             user = await login(data);
             reset();
         } catch (error) {
             console.log(error);
+            setErrorMsg(error.message);
+        } finally {
+            setLoading(false);
         }
 
         if (user) {
             props.history.push(`/gifts`);
-        } else {
-            setLoading(false);
-        }
+        } 
     }
 
     const formClassName = `${isLoading ? 'loading' : ''}`;
@@ -30,8 +39,13 @@ const LoginPage = (props) => {
     return (
         <div className="signin-form">
             <h2>Sign In</h2>
-            <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
 
+            {
+                errorMsg && <ShowError message={errorMsg} />
+
+            }
+            
+            <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
             <label>Email</label>
             <input 
                 type="email"
