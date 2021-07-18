@@ -124,10 +124,12 @@ const AdminUpdatePage = (props) => {
                     {...register("url")}>
                 </input> 
 
-                <div>
-                    <button type="submit" className="btn btn-primary">Update</button>
-                    <button type="reset" className="btn btn-danger">Reset</button>  
-                    <Link to='/admin'>Back</Link>                   
+                <div className="action-buttons">
+                    <Link to="/admin" className="btn btn-primary">&lt; Back</Link>
+                    <div>
+                        <button type="submit" className="btn btn-primary">Update</button>
+                        <button type="reset" className="btn btn-danger">Reset</button>                     
+                    </div>
                 </div>
             </form>
         </div>

@@ -95,6 +95,16 @@ button {
   width: 100%;
 }
 
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-buttons button:last-of-type {
+  margin-right: 0;
+}
+
+
 
 .error {
   border: 1px solid rgb(128,0,0);
