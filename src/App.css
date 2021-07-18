@@ -19,12 +19,6 @@ input, button {
   margin-bottom: 1em;
 }
 
-textarea {
-  padding: 0 1em;
-  margin-bottom: 1em;
-}
-
-
 table {
   border: 1px solid black;
   border-collapse: collapse;
@@ -241,9 +235,6 @@ button {
   width: 100%;
 }
 
-.admin-add-form textarea {
-  height: 10em;
-}
 
 
 

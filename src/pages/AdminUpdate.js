@@ -100,13 +100,17 @@ const AdminUpdatePage = (props) => {
                 </textarea>
 
                 <label>Price</label>
-                <input 
-                    type="number"
-                    name="price"
-                    placeholder="0.00"
-                    step="any"
-                    {...register("price")}>
-                </input>
+                <div className="currency-input-wrapper">
+                    <p>$</p>
+                    <input 
+                        type="number"
+                        name="price"
+                        className="currency-input"
+                        placeholder="0.00"
+                        step="any"
+                        {...register("price")}>
+                    </input>
+                </div>
 
                 <label>Image URL</label>
                 <input 
