@@ -41,7 +41,7 @@ const AdminPage = () => {
                                 <p>{gift.description.substring(0,150)}...</p>
                                 <p>${gift.price}</p>
                                 <div>
-                                    <button type="button" onClick={() => deleteGift(gift.id)}>Delete</button>
+                                    <button className="btn btn-danger" type="button" onClick={() => deleteGift(gift.id)}>Delete</button>
                                     <Link className="btn btn-primary" to={`/admin/update/${gift.id}`}>Update</Link>
                                 </div>
                             </div>
