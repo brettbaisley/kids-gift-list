@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { addGiftDocument } from '../firebase/gift';
 import { useForm } from 'react-hook-form';
 
@@ -103,9 +104,12 @@ const AdminAddPage = (props) => {
                     {...register("url")}>
                 </input> 
 
-                <div>
-                    <button type="submit" className="btn btn-primary">Add</button>
-                    <button type="reset" className="btn btn-danger">Reset</button>                     
+                <div className="action-buttons">
+                    <Link to="/admin" className="btn btn-primary">&lt; Back</Link>
+                    <div>
+                        <button type="submit" className="btn btn-primary">Add</button>
+                        <button type="reset" className="btn btn-danger">Reset</button>                     
+                    </div>
                 </div>
             </form>
         </div>
