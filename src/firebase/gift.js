@@ -1,28 +1,29 @@
+import firebase from 'firebase/app';
 import { firestore } from './config';
 
 export const addGiftDocument = async (gift) => {
     // Create the gift object
     const giftDetails = {
         brand: gift.brand,
-        createDate: "",
+        createDate: firebase.firestore.FieldValue.serverTimestamp(),
         description: gift.description,
         img_url: gift.img_url,
         price: gift.price,
         purchased: false,
         title: gift.title,
-        updateData: "",
+        updateDate: firebase.firestore.FieldValue.serverTimestamp(),
         url: gift.url
     };
 
     // Write the gift data to Cloud Firestore
-    const res = firestore.collection('gifts').add(giftDetails)
+    const res = firestore.collection('gifts').add(giftDetails);
     return res;
 }
 
 
 export const updateGiftDocument = async (gift) => {
     const docRef = firestore.doc(`/gifts/${gift.id}`);
-    return docRef.set(gift, {merge: true});
+    return docRef.set( {...gift, updateDate: firebase.firestore.FieldValue.serverTimestamp() }, {merge: true});
 }
 
 
