@@ -105,7 +105,7 @@ const AdminAddPage = (props) => {
 
                 <div>
                     <button type="submit" className="btn btn-primary">Add</button>
-                    <button type="reset" className="btn btn-secondary">Reset</button>                     
+                    <button type="reset" className="btn btn-danger">Reset</button>                     
                 </div>
             </form>
         </div>
