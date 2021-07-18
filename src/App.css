@@ -1,6 +1,7 @@
 :root {
   --btn-bg-primary-color: #3498DB;
   --btn-bg-secondary-color: #A569BD;
+  --btn-bg-danger-color: #CB4335;
   --btn-bg-cta-color: #F39C12;
 
   --text-primary-color: #1b1b1b;
@@ -76,6 +77,10 @@ button {
 
 .btn-secondary {
   background: var(--btn-bg-secondary-color);
+}
+
+.btn-danger {
+  background: var(--btn-bg-danger-color);
 }
 
 .signin-form {
@@ -248,6 +253,11 @@ button {
 
 .admin-gift-list:nth-child(even) {
   background-color: #f1f1f1;
+}
+
+.admin-gift-list .btn {
+  margin-right: .5em;
+  margin-bottom: .5em;
 }
 
 
