@@ -8,6 +8,10 @@
     padding: 0 1em;
 }
 
+.site-header .btn {
+    margin: 0;
+}
+
 .site-header h1 {
     margin: 0;
 }
