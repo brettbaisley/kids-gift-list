@@ -126,7 +126,7 @@ const AdminUpdatePage = (props) => {
 
                 <div>
                     <button type="submit" className="btn btn-primary">Update</button>
-                    <button type="reset" className="btn btn-secondary">Reset</button>  
+                    <button type="reset" className="btn btn-danger">Reset</button>  
                     <Link to='/admin'>Back</Link>                   
                 </div>
             </form>
