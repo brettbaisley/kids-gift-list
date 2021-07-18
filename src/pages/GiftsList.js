@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { firestore } from '../firebase/config';
+import Loader from '../components/Loader';
 
 const GiftsListPage = () => {
     const [ gifts, setGifts ] = useState([]);
-    
+    const [isLoading, setLoading] = useState(false);
 
     useEffect( () => {
+        setLoading(true);
         const giftsRef = firestore.collection('gifts');
         const unsubscribe = giftsRef.onSnapshot(querySnapshot => {
             const gifts = querySnapshot.docs.map( (gift) => {
                 return { id: gift.id, ...gift.data() } ;
             });
             setGifts(gifts);
+            setLoading(false);
         });
         return unsubscribe;
     }, []);
@@ -21,6 +24,7 @@ const GiftsListPage = () => {
 
     return (
         <div>
+            <Loader value={isLoading} />
             <h2>This page will list all of the gifts in the database.</h2>
             <ul className="gifts-grid">
                 {
