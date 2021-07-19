@@ -95,6 +95,7 @@ button {
   background-color: rgba(128,0,0,.3);
   color: rgb(128,0,0);
   padding: 1em;
+  list-style: none;
 }
 
 .success {
