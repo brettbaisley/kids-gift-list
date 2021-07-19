@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { addGiftDocument } from '../firebase/gift';
 import { useForm } from 'react-hook-form';
+import FormValidationMsg from '../components/FormValidationMsg';
 
 const AdminAddPage = (props) => {
-    const { register, handleSubmit, reset} = useForm();
+    const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm();
     const [isLoading, setLoading] = useState(false);
     const [userMessage, setUserMessage] = useState({});
 
@@ -56,12 +57,14 @@ const AdminAddPage = (props) => {
 
             <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
 
+                <FormValidationMsg errors={errors} />
+
                 <label>Brand</label>
                 <input 
                     type="text"
                     name="brand"
                     placeholder="Brand"
-                    {...register("brand")}>
+                    {...register("brand", { required: true })}>
                 </input>
 
                 <label>Title</label>
@@ -69,14 +72,14 @@ const AdminAddPage = (props) => {
                     type="text"
                     name="title"
                     placeholder="Title"
-                    {...register("title")}>
+                    {...register("title", { required: true })}>
                 </input>
 
                 <label>Description</label>
                 <textarea
                     name="description"
                     placeholder="Description"
-                    {...register("description")}>
+                    {...register("description", { required: true })}>
                 </textarea>
 
                 <label>Price</label>
@@ -89,7 +92,7 @@ const AdminAddPage = (props) => {
                         className="currency-input"
                         placeholder="0.00"
                         step="any"
-                        {...register("price")}>
+                        {...register("price", { required: true })}>
                     </input>
                 </div>
 
@@ -98,7 +101,7 @@ const AdminAddPage = (props) => {
                     type="url"
                     name="img_url"
                     placeholder="http://"
-                    {...register("img_url")}>
+                    {...register("img_url", { required: true })}>
                 </input> 
 
                 <label>Item URL</label>
@@ -106,14 +109,14 @@ const AdminAddPage = (props) => {
                     type="url"
                     name="url"
                     placeholder="http://"
-                    {...register("url")}>
+                    {...register("url", { required: true })}>
                 </input> 
 
                 <div className="action-buttons">
                     <Link to="/admin" className="btn btn-primary">&lt; Back</Link>
                     <div>
                         <button type="submit" className="btn btn-primary">Add</button>
-                        <button type="reset" className="btn btn-danger">Reset</button>                     
+                        <button type="reset" className="btn btn-danger" onClick={() => clearErrors()  }>Reset</button>                     
                     </div>
                 </div>
             </form>
