@@ -79,16 +79,6 @@ button {
   background: var(--btn-bg-danger-color);
 }
 
-.signin-form {
-  max-width: 30em;
-  margin: 0 auto;
-}
-
-.signin-form > form > * {
-  display: block;
-  width: 100%;
-}
-
 .action-buttons {
   display: flex;
   justify-content: space-between;
@@ -113,6 +103,22 @@ button {
   color: rgb(0,100,0);
   padding: 1em;
 }
+
+
+
+
+/* Sign In Page */
+.signin-form {
+  max-width: 30em;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.signin-form > form > * {
+  display: block;
+  width: 100%;
+}
+
 
 
 
