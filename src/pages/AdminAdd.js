@@ -116,7 +116,7 @@ const AdminAddPage = (props) => {
                     <Link to="/admin" className="btn btn-primary">&lt; Back</Link>
                     <div>
                         <button type="submit" className="btn btn-primary">Add</button>
-                        <button type="reset" className="btn btn-danger" onClick={() => clearErrors()  }>Reset</button>                     
+                        <button type="reset" className="btn btn-danger" onClick={() => clearErrors()}>Reset</button>                     
                     </div>
                 </div>
             </form>
