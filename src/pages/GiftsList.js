@@ -25,7 +25,6 @@ const GiftsListPage = () => {
     return (
         <div>
             <Loader value={isLoading} />
-            <h2>This page will list all of the gifts in the database.</h2>
             <ul className="gifts-grid">
                 {
                     gifts.map(gift => (
