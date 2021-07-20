@@ -7,7 +7,7 @@ import FormValidationMsg from '../components/FormValidationMsg';
 
 const AdminUpdatePage = (props) => {
     const params = useParams();
-    const { register, handleSubmit, setValue, reset, clearErrors, formState: { errors } } = useForm();
+    const { register, handleSubmit, setValue, clearErrors, formState: { errors } } = useForm();
     const [ gift, setGift ] = useState(null);
     const [isLoading, setLoading] = useState(false);
     const [userMessage, setUserMessage] = useState({});
