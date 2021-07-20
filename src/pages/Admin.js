@@ -29,24 +29,24 @@ const AdminPage = () => {
 
     return (
         <>
-            <h2>Admin  Page</h2>
-            <Link to="/admin/add" className="btn btn-primary">Add</Link>
             <div className="admin-gift-container">
-                    {
-                        giftList.map(gift => (
-                            <div key={gift.id} className="admin-gift-list">
-                                <img src={gift.img_url} alt={gift.title} style={{width: '100px', height: 'auto'}} />
-                                <p>{gift.brand}</p>
-                                <p>{gift.title}</p>
-                                <p>{gift.description.substring(0,150)}...</p>
-                                <p>${gift.price}</p>
-                                <div>
-                                    <Link className="btn btn-primary" to={`/admin/update/${gift.id}`}>Update</Link>
-                                    <button className="btn btn-danger" type="button" onClick={() => deleteGift(gift.id)}>Delete</button>
-                                </div>
+            <h2>Add / Update / Delete Gifts</h2>
+                <Link to="/admin/add" className="btn btn-primary add">+</Link>
+                {
+                    giftList.map(gift => (
+                        <div key={gift.id} className="admin-gift-list">
+                            <img src={gift.img_url} alt={gift.title} style={{width: '100px', height: 'auto'}} />
+                            <p>{gift.brand}</p>
+                            <p>{gift.title}</p>
+                            <p>{gift.description.substring(0,150)}...</p>
+                            <p>${gift.price}</p>
+                            <div>
+                                <Link className="btn btn-primary" to={`/admin/update/${gift.id}`}>Update</Link>
+                                <button className="btn btn-danger" type="button" onClick={() => deleteGift(gift.id)}>Delete</button>
                             </div>
-                        ))
-                    }
+                        </div>
+                    ))
+                }
             </div>
         </>
     )
