@@ -262,7 +262,7 @@ button {
 
 /* Admin Pages */
 .admin-gift-container {
-  max-width: 53em;
+  width: 100%;
   margin: 0 auto;
   padding: 1em;
 }
@@ -292,10 +292,12 @@ button {
 
 
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 700px) {
   .admin-gift-list {
     display: grid;
     grid-template-columns: 1fr 2fr 4fr 6fr 1fr 2fr ;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .admin-gift-list > * {
