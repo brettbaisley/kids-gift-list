@@ -81,7 +81,7 @@ const SignupPage = (props) => {
 
                 <button type="submit" className="btn btn-primary">Register</button>
 
-                <p>Already registered? <Link to="/login" className='btn btn-secondary'>Login</Link></p>
+                <p>Already registered? <Link to="/login">Login</Link></p>
                      
             </form>
         </div>
