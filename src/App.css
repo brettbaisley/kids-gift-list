@@ -130,8 +130,8 @@ button {
   padding: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 15px;
-  row-gap: 15px;
+  column-gap: 1.5em;
+  row-gap: 1.5em;
   list-style: none;
 }
 
@@ -156,7 +156,8 @@ button {
 
 .gift-img {
   width: 100%;
-  max-height: 300px;
+  height: 13em;
+  object-fit: contain;
 }
 
 
@@ -164,6 +165,15 @@ button {
 @media screen and (min-width: 650px) {
   .gifts-grid {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .gifts-grid {
+    max-width: 80em;
+  }
+  .gifts-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
