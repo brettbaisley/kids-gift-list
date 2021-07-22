@@ -64,7 +64,7 @@ const LoginPage = (props) => {
 
             <button type="submit" className="btn btn-primary">Sign In</button>
             
-            <p>No Account? <Link to="/signup" className='btn btn-secondary'>Sign Up</Link></p>
+            <p>No Account? <Link to="/signup">Sign Up</Link></p>
             </form>
         </div>
     )

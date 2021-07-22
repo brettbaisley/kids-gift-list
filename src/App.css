@@ -6,12 +6,23 @@
 
   --text-primary-color: #1b1b1b;
   --text-secondary-color: #717171;
+
+  --link-primary-color: #084B8A;
+  --link-secondary-color: #0174DF;
 }
 
 body, header {
   overflow-x: hidden;
 }
 
+a,
+a:visited,
+a:focus {
+  color: var(--link-primary-color);
+}
+a:hover {
+  color: var(--link-secondary-color);
+}
 
 input, button {
   height: 2.5em;
@@ -57,7 +68,7 @@ button {
   border: 0;
   border-radius: 4px;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
-  color: white;
+  color: white !important;
   cursor: pointer;
   display: inline-block;
   line-height: 2rem;
