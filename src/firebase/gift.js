@@ -27,9 +27,9 @@ export const updateGiftDocument = async (gift) => {
 }
 
 
-export const deleteGiftDocument = async (gift) => {
-    console.log("Update document with ID: ", gift.uid)
-    return firestore.doc(`/gifts/${gift.uid}`).delete();
+export const deleteGiftDocument = async (giftId) => {
+    console.log("Deleted document with ID: ", giftId)
+    return firestore.doc(`/gifts/${giftId}`).delete();
 }
 
 export const getGifts = async () => {

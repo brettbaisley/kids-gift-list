@@ -1,45 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { firestore } from '../firebase/config';
-import Loader from '../components/Loader';
+import React, {useContext} from 'react';
+import { GiftContext } from '../firebase/GiftProvider';
+import GiftGallery from '../components/GiftGallery';
+
+// import { firestore } from '../firebase/config';
+// import Loader from '../components/Loader';
 
 const GiftsListPage = () => {
-    const [ gifts, setGifts ] = useState([]);
-    const [isLoading, setLoading] = useState(false);
-
-    useEffect( () => {
-        setLoading(true);
-        const giftsRef = firestore.collection('gifts');
-        const unsubscribe = giftsRef.onSnapshot(querySnapshot => {
-            const gifts = querySnapshot.docs.map( (gift) => {
-                return { id: gift.id, ...gift.data() } ;
-            });
-            setGifts(gifts);
-            setLoading(false);
-        });
-        return unsubscribe;
-    }, []);
-
-
+    const giftList = useContext(GiftContext);
 
     return (
-        <div>
-            <Loader value={isLoading} />
-            <ul className="gifts-grid">
-                {
-                    gifts.map(gift => (
-                        <li key={gift.id} className="gift-card">
-                            <Link to={`/gifts/${gift.id}`} >
-                                <img src={gift.img_url} alt={gift.title} className="gift-img" />
-                                <p className="gift-title">{gift.title}</p>
-                                <p className="gift-brand">by {gift.brand}</p>
-                                <p className="gift-price">${gift.price}</p>
-                            </Link>
-                        </li>
-                    ))
-                }
-            </ul>
-        </div>
+        <>
+            {<GiftGallery data={giftList} /> }
+        </>
     )
 }
 export default GiftsListPage;

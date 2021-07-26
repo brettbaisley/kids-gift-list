@@ -39,8 +39,8 @@ const AdminAddPage = (props) => {
         
         if (newGift) {
             reset();
-            console.log('Added document with ID: ', newGift.title);
-            setUserMessage( {status: 'success', message: `${newGift.title} was added successfully` });
+            console.log('Added document with ID: ', newGift);
+            setUserMessage( {status: 'success', message: `Gift was added successfully` });
         }
     }
 
