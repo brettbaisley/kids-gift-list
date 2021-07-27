@@ -10,6 +10,7 @@ export const addGiftDocument = async (gift) => {
         img_url: gift.img_url,
         price: gift.price,
         purchased: false,
+        purchasedBy: '',
         title: gift.title,
         updateDate: firebase.firestore.FieldValue.serverTimestamp(),
         url: gift.url
@@ -40,4 +41,16 @@ export const getGifts = async () => {
 export const getGift = async () => {
     // Return give for passed UID
     console.log("Get gift by ID")
+}
+
+export const markPurchased = async ({id, purchasedBy}) => {
+    console.log(`Marking gift id ${id} as purchased by ${purchasedBy}`);
+    const docRef = firestore.doc(`/gifts/${id}`);
+    return docRef.set( {purchased: true, purchasedBy: purchasedBy, updateDate: firebase.firestore.FieldValue.serverTimestamp() }, {merge: true});
+}
+
+export const markUnpurchased = async ({id}) => {
+    console.log(`Marking gift id ${id} as unpurchased`);
+    const docRef = firestore.doc(`/gifts/${id}`);
+    return docRef.set( {purchased: false, purchasedBy: "", updateDate: firebase.firestore.FieldValue.serverTimestamp() }, {merge: true});
 }

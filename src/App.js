@@ -17,7 +17,6 @@ import SignUpPage from './pages/Signup';
 import AdminPage from './pages/Admin';
 import AdminAddPage from './pages/AdminAdd';
 import AdminUpdatePage from './pages/AdminUpdate';
-import TestPage from './pages/Test';
 
 function App() {
   return (
@@ -27,8 +26,6 @@ function App() {
           <Header></Header>
             <Switch>
               <Route exact path="/" component={WelcomePage} />
-              {/* This is just for testing, remove it */}
-              <Route exact path="/test" component={TestPage} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/signup" component={SignUpPage} />
               <Route exact path="/gifts/:id" component={GiftDetailsPage} />

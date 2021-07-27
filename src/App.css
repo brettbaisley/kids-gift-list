@@ -2,6 +2,7 @@
   --btn-bg-primary-color: #3498DB;
   --btn-bg-secondary-color: #A569BD;
   --btn-bg-danger-color: #CB4335;
+  --btn-bg-disabled-color: #525252;
   --btn-bg-cta-color: #F39C12;
 
   --text-primary-color: #1b1b1b;
@@ -88,6 +89,10 @@ button {
 
 .btn-danger {
   background: var(--btn-bg-danger-color);
+}
+
+.btn-disabled {
+  background: var(--btn-bg-disabled-color);
 }
 
 .action-buttons {
