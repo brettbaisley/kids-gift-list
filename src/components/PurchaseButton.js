@@ -5,19 +5,23 @@ import { useSession } from '../firebase/UserProvider';
 const PurchaseButton = ( {id, isPurchased, purchasedBy} ) => {
     const { user } = useSession();
 
+    if (!user) return null;
+
     if (isPurchased && purchasedBy === user.uid) {
         return (
             <button type="button" className="btn btn-primary" onClick={ () => { markUnpurchased({id: id})}}>Mark Unpurchased</button>
         )
     }
-    if (isPurchased) {
+    if (isPurchased && user.uid) {
         return (
             <button disabled type="button" className="btn btn-disabled" onClick={ () => { markUnpurchased({id: id})}}>Mark Unpurchased</button>
         )
     }
-    return (
-        <button type="button" className="btn btn-primary" onClick={() => {markPurchased({id: id, purchasedBy: user.uid})}}>Mark Purchased</button>
-    )
+    if (user.uid) {
+        return (
+            <button type="button" className="btn btn-primary" onClick={() => {markPurchased({id: id, purchasedBy: user.uid})}}>Mark Purchased</button>
+        )
+    }
 }
 
 export default PurchaseButton;
