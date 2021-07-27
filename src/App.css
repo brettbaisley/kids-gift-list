@@ -237,6 +237,12 @@ button {
   grid-area: img;
 }
 
+.gift-detail-actions {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 2 / 4;
+}
+
 
 @media screen and (min-width: 650px) {
   .gift-detail-card {
