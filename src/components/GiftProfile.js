@@ -19,7 +19,7 @@ const GiftProfile = ( {gift} ) => {
             <a href={gift.url} alt="Company's Product Page" target="_blank" rel="noreferrer nofollow">Company Page</a>
         </p>
         <img src={gift.img_url} alt={gift.title} className="gift-img gift-detail-img" />
-        <div>
+        <div className="gift-detail-actions">
             <Link to="/gifts" className="btn btn-primary">&lt; Back</Link>     
             <PurchaseButton isPurchased={gift.purchased} purchasedBy={gift.purchasedBy} id={gift.id} />
         </div>
