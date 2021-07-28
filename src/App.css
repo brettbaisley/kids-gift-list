@@ -240,7 +240,7 @@ button {
 .gift-detail-actions {
   display: flex;
   justify-content: space-between;
-  grid-column: 2 / 4;
+  grid-column: 1 / 4;
 }
 
 
@@ -252,6 +252,9 @@ button {
               "img title price"
               "img description description"
               "img action action";
+  }
+  .gift-detail-actions {
+    grid-column: 2 / 4;
   }
 }
 
