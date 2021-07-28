@@ -9,9 +9,7 @@ const AdminPage = () => {
 
     return (
         <>
-            <div className="admin-gift-container">
-                {<AdminGiftGallery data={giftList} /> }
-            </div>
+            {<AdminGiftGallery data={giftList} /> }
             <AdminAddButton />
         </>
     )
