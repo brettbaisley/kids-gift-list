@@ -16,14 +16,8 @@ const GiftDetailsPage = () => {
         }
     });
 
-
-
-
-
     return (
-        <>
-            {<GiftProfile id={params.id} gift={gift} />}
-        </>
+        <GiftProfile id={params.id} gift={gift} />
       );
 }
 export default GiftDetailsPage;

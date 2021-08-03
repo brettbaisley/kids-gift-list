@@ -216,28 +216,28 @@ button {
             "action action";
 }
 
-.gift-detail-brand {
+.gift-detail-card .gift-detail-brand {
   grid-area: brand;
 }
 
-.gift-detail-title {
+.gift-detail-card .gift-title {
   grid-area: title;
 }
 
-.gift-detail-price {
+.gift-detail-card .gift-price {
   grid-area: price;
   margin: 0;
 }
 
-.gift-detail-description {
+.gift-detail-card .gift-detail-description {
   grid-area: description;
 }
 
-.gift-detail-img {
+.gift-detail-card figure {
   grid-area: img;
 }
 
-.gift-detail-actions {
+.gift-detail-card .gift-detail-actions {
   display: flex;
   justify-content: space-between;
   grid-column: 1 / 4;
@@ -286,7 +286,7 @@ button {
 
 
 /* Admin Pages */
-.admin-gift-container {
+.admin-gifts-grid {
   width: 100%;
   margin: 0 auto;
   padding: 1em;
@@ -306,51 +306,51 @@ button {
   right: 20px;
 }
 
-.admin-gift-list {
+.admin-gifts-list {
   display: block;
   margin-bottom: 1em;
 }
 
-.admin-gift-list:nth-child(even) {
+.admin-gifts-list:nth-child(even) {
   background-color: #f1f1f1;
 }
 
 
 
 @media screen and (min-width: 700px) {
-  .admin-gift-list {
+  .admin-gifts-list {
     display: grid;
     grid-template-columns: 2fr 4fr 2fr 6fr 1fr 2fr ;
     width: 90%;
     margin: 0 auto;
   }
 
-  .admin-gift-list .gift-img {
+  .admin-gifts-list .gift-img {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
-  .admin-gift-list .gift-title {
+  .admin-gifts-list .gift-title {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
-  .admin-gift-list .gift-brand {
+  .admin-gifts-list .gift-brand {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
   }
-  .admin-gift-list .gift-description {
+  .admin-gifts-list .gift-description {
     grid-column: 4 / 5;
     grid-row: 1 / 2;
   }
-  .admin-gift-list .gift-price {
+  .admin-gifts-list .gift-price {
     grid-column: 5 / 6;
     grid-row: 1 / 2;
   }
-  .admin-gift-list .admin-gift-actions {
+  .admin-gifts-list .admin-gift-actions {
     grid-column: 6 / 7;
     grid-row: 1 / 2;
   }
 
-  .admin-gift-list > * {
+  .admin-gifts-list > * {
     padding: 1em;
     margin: 0;
   }
