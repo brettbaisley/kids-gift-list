@@ -10,7 +10,7 @@ const GiftsListPage = () => {
 
     return (
         <>
-            {<GiftGallery data={giftList} /> }
+            <GiftGallery data={giftList} /> 
         </>
     )
 }

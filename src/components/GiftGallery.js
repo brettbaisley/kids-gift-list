@@ -1,25 +1,26 @@
-import React from "react";
-import Gift from "../components/Gift";
+import React, {useContext} from "react";
+import Gift from "../components/Gift/Gift";
+import { Link } from 'react-router-dom';
+import { GiftContext } from '../firebase/GiftProvider';
 
-const GiftGallery = props => {
-  const giftList = props.data;
+
+const GiftGallery = () => {
+  const giftList = useContext(GiftContext);
   let gifts;
-  
-  // map variables to each item in fetched image array and return image component
+
   if (giftList.length > 0) {
     gifts = giftList.map(gift => {
-      let id = gift.id;
-      let title = gift.title;
-      let img_url = gift.img_url;
-      let brand = gift.brand;
-      let price = gift.price;
-      let description = gift.description;
-      return <Gift key={id} id={id} img_url={img_url} title={title} brand={brand} price={price} description={description} className="gift-card" />;
-    });
-  } else {
-    // return 'not found' component if no images fetched
-    // noImages = <NoImages />; 
-  }
+      return (
+              <li key={gift.id} className="gift-card"> 
+                <Link to={`/gifts/${gift.id}`} >
+                  <Gift gift={gift} className="gift-card" />
+                </Link>
+              </li>
+            )
+    })
+  } 
+
+
   return (
     <ul className='gifts-grid'>
         {gifts}
