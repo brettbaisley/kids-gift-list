@@ -315,6 +315,10 @@ button {
   background-color: #f1f1f1;
 }
 
+.admin-gifts-list .gift-img {
+  height: 5em;
+}
+
 
 
 @media screen and (min-width: 700px) {

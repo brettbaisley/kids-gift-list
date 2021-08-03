@@ -13,7 +13,7 @@ const AdminGiftGallery = () => {
       return (
               <li key={gift.id} className="admin-gifts-list"> 
                   <Gift gift={gift} className="gift-card" />
-                  <GiftDescription gift={gift} />
+                  <GiftDescription gift={gift} descLength='100' />
                   <AdminActions id={gift.id} />
               </li>
             )
