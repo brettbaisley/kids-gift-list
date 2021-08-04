@@ -9,7 +9,7 @@ const PurchaseButton = ( {id, isPurchased, purchasedBy} ) => {
 
     if (isPurchased && purchasedBy === user.uid) {
         return (
-            <button type="button" className="btn btn-primary" onClick={ () => { markUnpurchased({id: id})}}>Mark Unpurchased</button>
+            <button type="button" className="btn btn-danger" onClick={ () => { markUnpurchased({id: id})}}>Mark Unpurchased</button>
         )
     }
     if (isPurchased && user.uid) {

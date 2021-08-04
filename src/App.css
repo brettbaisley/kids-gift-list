@@ -93,6 +93,7 @@ button {
 
 .btn-disabled {
   background: var(--btn-bg-disabled-color);
+  cursor: not-allowed;
 }
 
 .action-buttons {
