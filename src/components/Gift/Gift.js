@@ -15,6 +15,7 @@ import React from "react";
 import GiftTitle from './GiftTitle';
 import GiftPrice from './GiftPrice';
 import GiftBrand from './GiftBrand';
+import GiftWhichKid from './GiftWhichKid';
 
 
 const Gift = (props) => {
@@ -26,6 +27,7 @@ const Gift = (props) => {
             <GiftTitle title={props.gift.title} />
             <GiftBrand brand={props.gift.brand} />
             <GiftPrice price={props.gift.price} />
+            <GiftWhichKid kids={props.gift.whichKid} />
     </>
     );
 };

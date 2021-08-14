@@ -112,6 +112,13 @@ const AdminAddPage = (props) => {
                     {...register("url", { required: true })}>
                 </input> 
 
+                <label>For</label><br></br>
+                <select multiple={true}
+                    {...register("whichKid")}>
+                    <option value="mateo">Mateo</option>
+                    <option value="lucas">Lucas</option>
+                </select>
+                
                 <div className="action-buttons">
                     <Link to="/admin" className="btn btn-primary">&lt; Back</Link>
                     <div>

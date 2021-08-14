@@ -41,6 +41,7 @@ const AdminUpdatePage = (props) => {
                     setValue('price', documentData.price);
                     setValue('img_url', documentData.img_url);
                     setValue('url', documentData.url);
+                    setValue('whichKid', documentData.whichKid);
                 }
             });
     }, [params.id, setValue]);
@@ -130,6 +131,13 @@ const AdminUpdatePage = (props) => {
                     placeholder="http://"
                     {...register("url", { required: true })}>
                 </input> 
+
+                <label>For</label><br></br>
+                <select multiple={true}
+                    {...register("whichKid")}>
+                    <option value="mateo">Mateo</option>
+                    <option value="lucas">Lucas</option>
+                </select>
 
                 <div className="action-buttons">
                     <Link to="/admin" className="btn btn-primary">&lt; Back</Link>
