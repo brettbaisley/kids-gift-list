@@ -13,7 +13,8 @@ export const addGiftDocument = async (gift) => {
         purchasedBy: '',
         title: gift.title,
         updateDate: firebase.firestore.FieldValue.serverTimestamp(),
-        url: gift.url
+        url: gift.url,
+        whichKid: []
     };
 
     // Write the gift data to Cloud Firestore

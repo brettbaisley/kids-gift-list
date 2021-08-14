@@ -10,6 +10,9 @@
 
   --link-primary-color: #084B8A;
   --link-secondary-color: #0174DF;
+
+  --kid-mateo-bg-color: #000080;
+  --kid-lucas-bg-color: #e00000;
 }
 
 body, header {
@@ -48,6 +51,11 @@ td {
 button {
   margin: 0;
   height: 2rem;
+}
+
+input[type='checkbox'] {
+  width: auto;
+  height: auto;
 }
 
 .site-nav {
@@ -177,6 +185,26 @@ button {
   object-fit: contain;
 }
 
+.gift-whichkid-initial {
+  border-radius: 50%;
+  color: white;
+  display: inline-block;
+  font-weight: 800;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  align-items: center;
+  margin-left: .5em
+}
+
+.mateo {
+  background-color: var(--kid-mateo-bg-color);
+}
+
+.lucas {
+  background-color: var(--kid-lucas-bg-color);
+}
+
 
 
 @media screen and (min-width: 650px) {
@@ -242,6 +270,12 @@ button {
   display: flex;
   justify-content: space-between;
   grid-column: 1 / 4;
+}
+
+.gift-detail-card .gift-whichkid {
+  grid-area: description;
+  justify-self: end;
+  align-self: end;
 }
 
 
@@ -318,6 +352,10 @@ button {
 
 .admin-gifts-list .gift-img {
   height: 5em;
+}
+
+.admin-gifts-list .gift-whichkid {
+  display: none;
 }
 
 
