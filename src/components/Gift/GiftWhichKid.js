@@ -11,7 +11,7 @@ const GiftWhichKid = (props) => {
     }
 
     if (props.kids) {
-        const kids = props.kids.map( (kid) => <span className={kidClass(kid)}>{kid.substring(0,1).toUpperCase()}</span>);
+        const kids = props.kids.map( (kid) => <span key={kid} className={kidClass(kid)}>{kid.substring(0,1).toUpperCase()}</span>);
         return (   
             <div className="gift-whichkid">{kids}</div>
         );

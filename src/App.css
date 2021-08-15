@@ -149,6 +149,20 @@ input[type='checkbox'] {
 
 
 /* Gift Page */
+
+.gifts-filter {
+  max-width: 60em;
+  margin: 0 auto;
+  height: auto;
+  padding: 1em;
+  /* background-color:rgba(0, 0, 0, 0.05) */
+}
+.gifts-filter select {
+  height: auto;
+  margin: 0;
+  padding: 0.25em;
+}
+
 .gifts-grid {
   max-width: 60em;
   margin: 0 auto;
@@ -215,6 +229,9 @@ input[type='checkbox'] {
 
 @media screen and (min-width: 1200px) {
   .gifts-grid {
+    max-width: 80em;
+  }
+  .gifts-filter {
     max-width: 80em;
   }
   .gifts-grid {
