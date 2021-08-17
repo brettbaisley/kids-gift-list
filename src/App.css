@@ -318,6 +318,30 @@ input[type='checkbox'] {
 
 
 
+/* How To Use Steps */
+.howtouse {
+  padding: 2em;
+}
+
+.howtouse ol {
+  line-height: 3em;
+  margin-left: 1em;
+}
+
+.howtouse .btn {
+  cursor: default;
+}
+
+@media screen and (min-width: 650px) {
+  .howtouse {
+    max-width: 50em;
+    margin: 0 auto;
+  }
+}
+
+
+
+
 /* Admin Pages */
 .admin-add {
   max-width: 60em;
